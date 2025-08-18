@@ -13,7 +13,6 @@ export default function Home() {
       <HeroSection />
       <PipelineSection />
       <HowItWorksSection />
-
       <PricingSection />
       <BookDemoSection />
       <FAQSection />
