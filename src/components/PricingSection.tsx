@@ -96,7 +96,7 @@ const PricingSection = () => {
           {plans.map((plan, idx) => (
             <div
               key={plan.name}
-              className="relative flex flex-col bg-[#10162b] border border-[#232946] rounded-[2rem] shadow-2xl px-8 py-10 min-h-[600px] max-w-[400px] mx-auto items-center"
+              className="relative flex flex-col bg-[#10162b] border border-[#232946] rounded-[2rem] shadow-2xl px-8 py-10 h-[600px] w-full max-w-[400px] mx-auto"
               style={{
                 boxShadow:
                   "0 0 80px 0 rgba(28,36,76,0.25), 0 2px 24px 0 #10162b",
@@ -109,7 +109,7 @@ const PricingSection = () => {
                 </span>
               )}
               {/* Plan Name & Subtitle */}
-              <div className="w-full flex flex-col items-start mb-6">
+              <div className="flex flex-col items-start mb-6">
                 <span className="text-lg font-semibold text-white mb-1">
                   {plan.name}
                 </span>
@@ -119,7 +119,7 @@ const PricingSection = () => {
                 <div className="w-full h-px bg-white/10 my-2" />
               </div>
               {/* Price */}
-              <div className="w-full flex flex-col items-start mb-6">
+              <div className="flex flex-col items-start mb-6">
                 <span className="text-4xl sm:text-5xl font-bold text-white mb-1">
                   {plan.price !== null ? (
                     <>
@@ -132,7 +132,7 @@ const PricingSection = () => {
                 <span className="text-base text-gray-400">per month</span>
               </div>
               {/* Features */}
-              <ul className="w-full flex-1 flex flex-col gap-3 mb-8">
+              <ul className="flex-1 flex flex-col gap-3 mb-8">
                 {plan.features.map((f) => (
                   <li
                     key={f}
