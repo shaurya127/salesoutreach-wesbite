@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 const plans = [
   {
     name: "Basic",
+    subtitle: "For starters",
     price: 199,
-    credits: "3,000 Credits",
     features: [
+      "3000 Credits",
       "Prospecting Access",
       "Enrichment Access",
       "Outbound Access",
@@ -19,9 +19,10 @@ const plans = [
   },
   {
     name: "Pro",
+    subtitle: "For small team",
     price: 399,
-    credits: "10,000 Credits",
     features: [
+      "10,000 Credits",
       "Prospecting Access",
       "Enrichment Access",
       "Outbound Access",
@@ -34,9 +35,10 @@ const plans = [
   },
   {
     name: "Enterprise",
+    subtitle: "For large team",
     price: null,
-    credits: "Custom Credits",
     features: [
+      "Custom Credits",
       "Prospecting Access",
       "Enrichment Access",
       "Outbound Access",
@@ -49,110 +51,102 @@ const plans = [
 ];
 
 const PricingSection = () => {
-  const [yearly, setYearly] = useState(true);
+  const [yearly, setYearly] = useState(false);
   return (
-    <section id="pricing" className="py-20 relative bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Choose A Plan
-            </span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Flexible Pricing for Teams of All Sizes
-          </p>
-          <div className="flex items-center justify-center gap-4 mt-6">
+    <section className="w-full bg-[#0a0e23] py-20 sm:py-32 px-2 sm:px-6">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        {/* Section Title & Toggle */}
+        <h2 className="text-4xl sm:text-6xl font-extrabold text-center text-white mb-4">
+          Choose A Plan
+        </h2>
+        <p className="text-lg text-gray-400 text-center mb-8">
+          Flexible Pricing for Teams of All Sizes
+        </p>
+        <div className="flex items-center justify-center gap-4 mb-12">
+          <span
+            className={`text-lg font-medium ${
+              !yearly ? "text-white" : "text-gray-400"
+            }`}
+          >
+            Monthly
+          </span>
+          <button
+            className={`w-14 h-8 rounded-full bg-[#181f36] border border-white/20 flex items-center px-1 transition-all duration-300 ${
+              yearly ? "justify-end" : "justify-start"
+            }`}
+            onClick={() => setYearly((y) => !y)}
+            aria-label="Toggle pricing"
+          >
             <span
-              className={`text-lg font-medium ${
-                !yearly ? "text-white" : "text-gray-400"
+              className={`w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 shadow-lg transition-all duration-300 ${
+                yearly ? "translate-x-6" : "translate-x-0"
               }`}
-            >
-              Monthly
-            </span>
-            <button
-              className={`w-14 h-8 rounded-full bg-white/10 border border-white/20 flex items-center px-1 transition-all duration-300 ${
-                yearly ? "justify-end" : "justify-start"
-              }`}
-              onClick={() => setYearly((y) => !y)}
-            >
-              <motion.div
-                className="w-6 h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 shadow-lg"
-                layout
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              />
-            </button>
-            <span
-              className={`text-lg font-medium ${
-                yearly ? "text-white" : "text-gray-400"
-              }`}
-            >
-              Yearly
-            </span>
-          </div>
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            />
+          </button>
+          <span
+            className={`text-lg font-medium ${
+              yearly ? "text-white" : "text-gray-400"
+            }`}
+          >
+            Yearly
+          </span>
+        </div>
+        {/* Pricing Cards */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-stretch justify-center">
           {plans.map((plan, idx) => (
-            <motion.div
+            <div
               key={plan.name}
-              className={`relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:bg-white/10 transition-all duration-300 group ${
-                plan.badge ? "ring-2 ring-green-400/60" : ""
-              }`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              whileHover={{ scale: 1.03 }}
+              className="relative flex flex-col bg-[#10162b] border border-[#232946] rounded-[2rem] shadow-2xl px-8 py-10 min-h-[600px] max-w-[400px] mx-auto items-center"
+              style={{
+                boxShadow:
+                  "0 0 80px 0 rgba(28,36,76,0.25), 0 2px 24px 0 #10162b",
+              }}
             >
+              {/* Badge */}
               {plan.badge && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold px-4 py-1 rounded-full shadow-lg">
+                <span className="absolute top-6 right-6 bg-green-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-md">
                   {plan.badge}
                 </span>
               )}
-              <h3 className="text-xl font-bold text-white mb-2 mt-4">
-                {plan.name}
-              </h3>
-              <div className="text-4xl font-bold mb-2">
-                {plan.price !== null ? (
-                  <>
-                    <span className="align-top text-2xl font-medium">$</span>
-                    {yearly ? plan.price * 12 * 0.8 : plan.price}
-                  </>
-                ) : (
-                  <span>Custom Price</span>
-                )}
+              {/* Plan Name & Subtitle */}
+              <div className="w-full flex flex-col items-start mb-6">
+                <span className="text-lg font-semibold text-white mb-1">
+                  {plan.name}
+                </span>
+                <span className="text-base text-gray-400 mb-2">
+                  {plan.subtitle}
+                </span>
+                <div className="w-full h-px bg-white/10 my-2" />
               </div>
-              <div className="text-gray-400 mb-4">
-                {plan.price !== null ? (
-                  <span>per month</span>
-                ) : (
-                  <span>per month</span>
-                )}
+              {/* Price */}
+              <div className="w-full flex flex-col items-start mb-6">
+                <span className="text-4xl sm:text-5xl font-bold text-white mb-1">
+                  {plan.price !== null ? (
+                    <>
+                      ${yearly ? Math.round(plan.price * 12 * 0.8) : plan.price}
+                    </>
+                  ) : (
+                    "Custom Price"
+                  )}
+                </span>
+                <span className="text-base text-gray-400">per month</span>
               </div>
-              <ul className="text-left space-y-2 mb-6">
-                <li className="font-semibold text-green-400">{plan.credits}</li>
+              {/* Features */}
+              <ul className="w-full flex-1 flex flex-col gap-3 mb-8">
                 {plan.features.map((f) => (
-                  <li key={f} className="text-gray-300 flex items-center gap-2">
-                    <span className="text-green-400">✔</span> {f}
+                  <li
+                    key={f}
+                    className="flex items-center gap-2 text-base text-gray-200"
+                  >
+                    <span className="text-green-400 text-lg">✔</span> {f}
                   </li>
                 ))}
               </ul>
-              <button
-                className={`w-full py-3 rounded-full font-bold text-lg mt-auto ${
-                  plan.cta === "Talk to Sales"
-                    ? "bg-gradient-to-r from-blue-400 to-cyan-500 text-white"
-                    : "bg-gradient-to-r from-green-400 to-emerald-500 text-black"
-                } hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300`}
-              >
+              {/* CTA Button */}
+              <button className="w-full mt-auto py-4 rounded-xl bg-[#2563eb] text-white text-lg font-bold shadow-lg hover:bg-[#1d4ed8] transition">
                 {plan.cta}
               </button>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

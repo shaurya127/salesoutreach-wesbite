@@ -1,6 +1,7 @@
 "use client";
 import HeroSection from "../components/HeroSection";
 import PipelineSection from "../components/PipelineSection";
+import HowItWorksSection from "../components/HowItWorksSection";
 import FeaturesSection from "../components/FeaturesSection";
 import PricingSection from "../components/PricingSection";
 import FAQSection from "../components/FAQSection";
@@ -11,7 +12,7 @@ export default function Home() {
     <>
       <HeroSection />
       <PipelineSection />
-      <FeaturesSection />
+      <HowItWorksSection />
       <PricingSection />
       <DashboardPreviewSection />
       <FAQSection />
