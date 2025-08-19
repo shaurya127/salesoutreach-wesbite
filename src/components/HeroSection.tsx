@@ -1,96 +1,111 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] flex flex-col bg-[#0a0e23] text-white pb-10">
-    {/* Header Row */}
-    <div className="w-full flex items-center justify-between px-4 sm:px-6 pt-6 sm:pt-8 max-w-7xl mx-auto flex-wrap gap-2">
-      {/* Logo */}
-      <div className="flex items-center space-x-2 sm:space-x-3 min-w-[120px]">
-        <Image
-          src="/image/sales_logo.png"
-          alt="SalesOutreach Logo"
-          width={36}
-          height={36}
-          className="object-contain"
-          priority
-        />
-        <span className="text-white font-bold text-xl sm:text-2xl tracking-tight">
-          SalesOutreach
-        </span>
-      </div>
-      {/* Nav */}
-      <nav className="flex-1 flex justify-center items-center gap-6 sm:gap-12 text-base sm:text-lg min-w-[180px]">
-        <a
-          href="#how"
-          className="text-gray-200 hover:text-white font-medium transition"
-        >
-          How It Works?
-        </a>
-        <a
-          href="#pricing"
-          className="text-gray-200 hover:text-white font-medium transition"
-        >
-          Pricing
-        </a>
-      </nav>
-      {/* Book Demo Button */}
-      <a
-        href="#book-demo"
-        className="border border-white/30 rounded-xl px-4 sm:px-6 py-2 text-white font-medium text-base sm:text-lg hover:bg-white/10 transition shadow-sm mt-2 sm:mt-0"
-        style={{ boxShadow: "0 2px 12px 0 rgba(0,0,0,0.04)" }}
-      >
-        Book Demo
-      </a>
-    </div>
+  <section className="relative min-h-screen flex flex-col bg-gradient-to-b from-[#0a0e23] to-[#0a0e23] text-white">
     {/* Main Content */}
-    <div className="flex flex-col items-center justify-center flex-1 w-full px-2 sm:px-4 mt-10 sm:mt-16">
-      <div className="mb-4 sm:mb-6">
-        <span
-          className="inline-block px-4 sm:px-6 py-2 rounded-full bg-[#10172a] text-blue-200 text-sm sm:text-base font-medium border border-blue-900/40 shadow-sm"
-          style={{ boxShadow: "0 2px 12px 0 rgba(0,0,0,0.04)" }}
+    <div className="flex flex-col items-center justify-center flex-1 w-full px-4 sm:px-6 lg:px-8 pt-36 pb-16">
+      {/* Badge */}
+      <motion.div
+        className="mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <span 
+          className="inline-flex items-center px-6 py-3 text-white text-sm font-medium"
+          style={{
+            borderBottomWidth: '1px',
+            borderColor: '#1c244c',
+            borderLeftWidth: '1px',
+            borderRightWidth: '1px',
+            borderStyle: 'solid',
+            borderTopWidth: '1px',
+            alignContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#060a1e',
+            borderRadius: '32px',
+            boxShadow: 'inset 0 2px 6px #3a6ef269',
+            display: 'flex',
+            flex: 'none',
+            flexDirection: 'row',
+            flexWrap: 'nowrap',
+            gap: '10px',
+            height: 'min-content',
+            justifyContent: 'center',
+            overflow: 'hidden'
+          }}
         >
           For GTM and Sales Team
         </span>
-      </div>
-      <h1
-        className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-center leading-tight mb-4 sm:mb-6"
-        style={{ letterSpacing: "-0.03em" }}
+      </motion.div>
+
+      {/* Main Heading */}
+      <motion.h1
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-[88px] xl:text-[88px] font-semibold text-center leading-[1.02] mb-8 max-w-6xl"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        style={{ letterSpacing: "-0.025em" }}
       >
-        The All-in-One
-        <br className="hidden md:block" />
-        Platform to Prospect,
-        <br className="hidden md:block" />
-        Enrich & Outreach
-      </h1>
-      <p className="text-base sm:text-lg md:text-2xl text-gray-300 text-center max-w-xs sm:max-w-2xl mb-6 sm:mb-8">
+        <span className="block">The All-in-One</span>
+        <span className="block">Platform to Prospect,</span>
+        <span className="block bg-gradient-to-r from-white via-gray-100 to-gray-200 bg-clip-text text-transparent">
+          Enrich & Outreach
+        </span>
+      </motion.h1>
+
+      {/* Description */}
+      <motion.p
+        className="textlgg sm:text-md md:text-lg text-gray-500 text-center max-w-2xl mb-12 leading-relaxed px-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
         One platform for{" "}
-        <span className="font-semibold text-white">finding leads</span>,{" "}
-        <span className="font-semibold text-white">verifying contacts</span>,
-        and{" "}
-        <span className="font-semibold text-white">
-          sending inbox-ready emails
-        </span>{" "}
+        <span className="text-gray-400 font-semibold">finding leads</span>,{" "}
+        <span className="text-gray-400 font-semibold">verifying contacts</span>, and{" "}
+        <span className="text-gray-400 font-semibold">sending inbox-ready emails</span>{" "}
         that get replies.
-      </p>
-      <a
-        href="#book-demo"
-        className="mt-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-[#2563eb] text-white text-base sm:text-lg font-bold shadow-lg hover:bg-[#1d4ed8] transition"
+      </motion.p>
+
+      {/* CTA Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.7 }}
       >
-        Book Demo
-      </a>
-      {/* Dashboard Image with Glow */}
-      <div className="relative w-full flex justify-center mt-8 sm:mt-24">
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[98vw] sm:w-[90vw] max-w-2xl sm:max-w-5xl h-32 sm:h-64 bg-gradient-to-br from-blue-700/40 via-blue-500/20 to-transparent rounded-3xl blur-2xl z-0" />
-        <Image
-          src="/image/dashboard_1.png"
-          alt="Dashboard Preview"
-          width={1200}
-          height={600}
-          className="relative z-10 w-full max-w-2xl sm:max-w-5xl rounded-3xl shadow-2xl border border-white/10 object-cover"
-          priority
-        />
-      </div>
+        <a
+          href="#book-demo"
+          className="inline-flex items-center px-8 py-3 bg-[#3a6ef2] hover:bg-[#3066f1] text-white text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          Book Demo
+        </a>
+      </motion.div>
+
+      {/* Dashboard Preview */}
+      <motion.div
+        className="relative w-full flex justify-center mt-16 lg:mt-24"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.9 }}
+      >
+        {/* Glow Effect */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[90%] max-w-6xl h-[60%] bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 rounded-3xl blur-3xl" />
+        
+        {/* Dashboard Image */}
+        <div className="relative z-10 w-full max-w-6xl">
+          <Image
+            src="/image/dashboard_1.png"
+            alt="Dashboard Preview"
+            width={1200}
+            height={600}
+            className="w-full rounded-2xl lg:rounded-3xl shadow-2xl border border-white/10"
+            priority
+          />
+        </div>
+      </motion.div>
     </div>
   </section>
 );
