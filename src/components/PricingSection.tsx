@@ -53,38 +53,38 @@ const plans = [
 const PricingSection = () => {
   const [yearly, setYearly] = useState(false);
   return (
-    <section className="w-full bg-[#0a0e23] py-20 sm:py-32 px-2 sm:px-6">
+    <section className="w-full bg-[#0a0e23] py-20 sm:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Title & Toggle */}
         <h2 className="text-4xl sm:text-6xl font-extrabold text-center text-white mb-4">
           Choose A Plan
         </h2>
-        <p className="text-lg text-gray-400 text-center mb-8">
+        <p className="text-lg text-gray-400 text-center mb-12">
           Flexible Pricing for Teams of All Sizes
         </p>
-        <div className="flex items-center justify-center gap-4 mb-12">
+        
+        {/* Perfect Toggle Button matching the image */}
+        <div className="flex items-center justify-center gap-6 mb-16">
           <span
-            className={`text-lg font-medium ${
+            className={`text-lg font-medium transition-colors duration-300 ${
               !yearly ? "text-white" : "text-gray-400"
             }`}
           >
             Monthly
           </span>
           <button
-            className={`w-14 h-8 rounded-full bg-[#181f36] border border-white/20 flex items-center px-1 transition-all duration-300 ${
-              yearly ? "justify-end" : "justify-start"
-            }`}
-            onClick={() => setYearly((y) => !y)}
-            aria-label="Toggle pricing"
+            className={`relative w-16 h-8 rounded-full ${yearly ? "bg-[#3a6ef2]" : "bg-gray-400"}  p-1 transition-all duration-300 ease-in-out `
+}            onClick={() => setYearly((y) => !y)}
+            aria-label="Toggle pricing period"
           >
-            <span
-              className={`w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 shadow-lg transition-all duration-300 ${
-                yearly ? "translate-x-6" : "translate-x-0"
+            <div
+              className={`w-6 h-6 bg-white rounded-full shadow-lg transform transition-transform duration-300 ease-in-out ${
+                yearly ? "translate-x-8" : "translate-x-0"
               }`}
             />
           </button>
           <span
-            className={`text-lg font-medium ${
+            className={`text-lg font-medium transition-colors duration-300 ${
               yearly ? "text-white" : "text-gray-400"
             }`}
           >
@@ -92,60 +92,79 @@ const PricingSection = () => {
           </span>
         </div>
         {/* Pricing Cards */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-stretch justify-center">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch justify-center max-w-6xl">
           {plans.map((plan, idx) => (
             <div
               key={plan.name}
-              className="relative flex flex-col bg-[#10162b] border border-[#232946] rounded-[2rem] shadow-2xl px-8 py-10 h-[600px] w-full max-w-[400px] mx-auto"
+              className="relative flex flex-col bg-[#0f1629] border border-[#1e293b] rounded-3xl shadow-2xl px-8 py-10 w-full max-w-[380px] mx-auto"
               style={{
-                boxShadow:
-                  "0 0 80px 0 rgba(28,36,76,0.25), 0 2px 24px 0 #10162b",
+                background: "linear-gradient(135deg, #0f1629 0%, #1e293b 100%)",
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05)",
               }}
             >
               {/* Badge */}
               {plan.badge && (
-                <span className="absolute top-6 right-6 bg-green-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-md">
+                <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
                   {plan.badge}
                 </span>
               )}
+              
               {/* Plan Name & Subtitle */}
-              <div className="flex flex-col items-start mb-6">
-                <span className="text-lg font-semibold text-white mb-1">
+              <div className="flex flex-col items-start mb-8 mt-4">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   {plan.name}
-                </span>
-                <span className="text-base text-gray-400 mb-2">
+                </h3>
+                <p className="text-sm text-gray-400">
                   {plan.subtitle}
-                </span>
-                <div className="w-full h-px bg-white/10 my-2" />
+                </p>
               </div>
+              
               {/* Price */}
-              <div className="flex flex-col items-start mb-6">
-                <span className="text-4xl sm:text-5xl font-bold text-white mb-1">
-                  {plan.price !== null ? (
-                    <>
-                      ${yearly ? Math.round(plan.price * 12 * 0.8) : plan.price}
-                    </>
-                  ) : (
-                    "Custom Price"
-                  )}
-                </span>
-                <span className="text-base text-gray-400">per month</span>
+              <div className="flex flex-col items-start mb-8">
+                <div className="flex items-baseline">
+                  <span className="text-5xl font-bold text-white">
+                    {plan.price !== null ? (
+                      <>
+                        ${yearly ? Math.round(plan.price * 12 * 0.8) : plan.price}
+                      </>
+                    ) : (
+                      "Custom Price"
+                    )}
+                  </span>
+                </div>
+                <span className="text-sm text-gray-400 mt-1">per month</span>
               </div>
+              
               {/* Features */}
-              <ul className="flex-1 flex flex-col gap-3 mb-8">
+              <ul className="flex-1 flex flex-col gap-4 mb-8">
                 {plan.features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-center gap-2 text-base text-gray-200"
+                    className="flex items-center gap-3 text-sm text-gray-300"
                   >
-                    <span className="text-green-400 text-lg">✔</span> {f}
+                    <svg 
+                      className="w-5 h-5 text-green-400 flex-shrink-0" 
+                      fill="currentColor" 
+                      viewBox="0 0 20 20"
+                    >
+                      <path 
+                        fillRule="evenodd" 
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
+                        clipRule="evenodd" 
+                      />
+                    </svg>
+                    {f}
                   </li>
                 ))}
               </ul>
+              
               {/* CTA Button */}
-              <button className="w-full mt-auto py-4 rounded-xl bg-[#2563eb] text-white text-lg font-bold shadow-lg hover:bg-[#1d4ed8] transition">
+              <div className="w-full flex items-center justify-center">
+
+              <button className="w-fit  px-4 py-3 rounded-xl bg-[#3a6ef2] text-white text-lg font-semibold shadow-md hover:bg-[#1e60ef] transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 {plan.cta}
               </button>
+              </div>
             </div>
           ))}
         </div>

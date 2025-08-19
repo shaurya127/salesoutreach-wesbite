@@ -5,23 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "What is SalesOutreach?",
-    a: "SalesOutreach is an AI-powered platform for prospecting, enrichment, and outreach automation.",
+    a: "SalesOutreach is an AI-powered sales automation platform that helps teams find, enrich, and engage high-quality leads—all in one place.",
   },
   {
     q: "How is it different from other tools?",
-    a: "It combines verified leads, enrichment, and human-like outreach in one seamless workflow.",
+    a: "We combine accurate prospecting, verified contact data, and AI-driven outreach to ensure your emails land in inboxes (not spam).",
   },
   {
     q: "What core features do you offer?",
-    a: "AI prospecting, enrichment, automated outreach, analytics, and CRM integrations.",
+    a: "AI Prospecting, Contact Enrichment and Outreach in one place",
   },
   {
     q: "How will SalesOutreach help my team?",
-    a: "It saves time, increases conversions, and lets your team focus on closing deals.",
+    a: "AI-driven emails (3X replies), no more manual prospecting (10+ hours saved), and guaranteed deliverability",
   },
   {
-    q: "What is SalesOutreach’s pricing policy?",
-    a: "Flexible monthly and yearly plans for teams of all sizes.",
+    q: "What is SalesOutreach's pricing policy?",
+    a: "We offer a flexible, usage-based pricing structure tailored to your team's needs. Pricing is usage based, with no hidden platform fees—and comprehensive support included with each package. To get a detailed pricing quote, simply reach out and request pricing",
   },
 ];
 
