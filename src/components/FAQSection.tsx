@@ -28,7 +28,7 @@ const faqs = [
 const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section className="py-20 relative bg-transparent">
+    <section className="py-20 relative bg-[#0a0e23]">
       <div className="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         <div className="space-y-6">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">

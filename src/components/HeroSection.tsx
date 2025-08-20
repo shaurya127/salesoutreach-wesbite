@@ -3,9 +3,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex flex-col bg-gradient-to-b from-[#0a0e23] to-[#0a0e23] text-white">
+  <section className="relative min-h-screen flex flex-col bg-gradient-to-b from-[#0a0e23] to-[#0a0e23] text-white overflow-hidden">
+    {/* Background Image (bottom inside) */}
+    <div className="absolute -bottom-[60%] left-0 right-0 w-full z-0  ">
+      <Image
+        src="/image/bg.png"
+        alt="Background Decorative"
+        width={1000}
+        height={500}
+        className="w-full object-cover"
+        priority
+      />
+    </div>
+
     {/* Main Content */}
-    <div className="flex flex-col items-center justify-center flex-1 w-full px-4 sm:px-6 lg:px-8 pt-36 pb-16">
+    <div className="relative z-10 flex flex-col items-center justify-center flex-1 w-full px-4 sm:px-6 lg:px-8 pt-36 pb-4">
       {/* Badge */}
       <motion.div
         className="mb-8"
@@ -91,11 +103,9 @@ const HeroSection = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.9 }}
       >
-        {/* Glow Effect */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[90%] max-w-6xl h-[60%] bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 rounded-3xl blur-3xl" />
-        
+       
         {/* Dashboard Image */}
-        <div className="relative z-10 w-full max-w-6xl">
+        <div className="relative z-10 w-full max-w-[68rem] ">
           <Image
             src="/image/dashboard_1.png"
             alt="Dashboard Preview"
