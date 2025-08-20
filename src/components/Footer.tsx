@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <motion.footer
-      className="relative overflow-hidden"
+      className="relative  bg-[#0a0e23] overflow-clip"
       style={{
-        background:
-          "linear-gradient(180deg, var(--token-0a6023b7-956f-483f-b3b2-22ca5cf79ece) 0%, var(--token-30adfd80-ecab-4819-b6d1-8070a9e3e5af) 100%)",
+        
         color: "var(--token-7a9e47d0-5397-40af-b396-a04512fe1d9e)",
         fontFamily: "sans-serif",
         fontSize: "12px",
@@ -21,8 +21,20 @@ const Footer = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
+      {/* Background Image (bottom inside) */}
+      <div className="absolute -bottom-[420%] left-0 right-0 w-full z-0 overflow-hidden transform scale-x-[-1] rotate-[2deg]">
+        <Image
+          src="/image/bg.png"
+          alt="Background Decorative"
+          width={1000}
+          height={500}
+          className="w-full object-cover"
+          priority
+        />
+      </div>
+
       {/* Subtle textured background effect */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:20px_20px]" />
       </div>
 
@@ -51,14 +63,7 @@ const Footer = () => {
               SalesOutreach
             </motion.h2>
 
-            {/* Vertical Divider */}
-            <div
-              className="hidden lg:block w-px h-8"
-              style={{
-                backgroundColor:
-                  "var(--token-7a9e47d0-5397-40af-b396-a04512fe1d9e)",
-              }}
-            ></div>
+            <div className="border-r-2  border-gray-300 opacity-45  h-7 "></div>
 
             {/* Tagline */}
             <motion.p
@@ -94,13 +99,13 @@ const Footer = () => {
             </Link>
           </motion.div>
         </div>
-
+   <div className="border-b  border-gray-400 opacity-45 mt-10"></div>
         {/* Horizontal Separator Line */}
         <motion.div
           className="w-full h-px my-8"
           style={{
             backgroundColor:
-              "var(--token-ebfdfc6f-a0e8-414d-b30e-eeab99d6e438)",
+              "#00000",
           }}
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -108,7 +113,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         />
 
-        {/* Bottom Section - Copyright */}
+        
         <motion.div
           className="flex justify-between items-center"
           initial={{ y: 20, opacity: 0 }}
