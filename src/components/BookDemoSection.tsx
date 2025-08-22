@@ -1,7 +1,7 @@
 "use client";
 
 const BookDemoSection = () => (
-  <section className="w-full bg-[#0a0e23] py-20 sm:py-32 px-2 sm:px-6">
+  <section className="w-full bg-[#0a0e23] py-20 sm:py-32 px-2 sm:px-6" id="book-demo">
     <div className="max-w-7xl mx-auto flex flex-col items-center">
       {/* Section Header */}
       <div className="text-center mb-16">

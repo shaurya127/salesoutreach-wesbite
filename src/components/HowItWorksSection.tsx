@@ -26,7 +26,7 @@ const features = [
 ];
 
 const HowItWorksSection = () => (
-  <section className="w-full bg-[#0a0e23] py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
+  <section className="w-full bg-[#0a0e23] py-24 sm:py-32 px-4 sm:px-6 lg:px-8" id="how-it-works">
     <div className="max-w-7xl mx-auto">
       {/* Section Header */}
       <div className="text-center mb-20">

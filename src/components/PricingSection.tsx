@@ -53,7 +53,7 @@ const plans = [
 const PricingSection = () => {
   const [yearly, setYearly] = useState(false);
   return (
-    <section className="w-full bg-[#0a0e23] py-20 sm:py-32 px-4 sm:px-6">
+    <section className="w-full bg-[#0a0e23] py-20 sm:py-32 px-4 sm:px-6" id="pricing">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Title & Toggle */}
         <h2 className="text-4xl sm:text-6xl font-extrabold text-center text-white mb-4">
