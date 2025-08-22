@@ -13,8 +13,8 @@ const icons = [
    fill="none" 
    stroke="black" 
    strokeWidth="20"
-   stroke-linecap="round"
-   stroke-linejoin="round"
+   strokeLinecap="round"
+   strokeLinejoin="round"
    className="w-5 h-5 sm:w-6 sm:h-6"
  >
   
@@ -94,7 +94,7 @@ const icons = [
 
   
    <circle cx="18" cy="18" r="5" fill="#000"/>
-   <path d="M16.5 18l1.5 1.5 3-3" stroke="white" strokeWidth="1" stroke-linecap="round" stroke-linejoin="round"/>
+   <path d="M16.5 18l1.5 1.5 3-3" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
  </svg>
 
    </div>,
@@ -242,14 +242,14 @@ const PipelineSection = () => (
                        <span className="text-sm sm:text-lg md:text-xl border border-[#2a335c] p-1.5 sm:p-2 rounded-lg inline-flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 fill-current" viewBox="0 0 64 64" fill="none">
    
    
-   <circle cx="32" cy="24" r="10" stroke="#fff" stroke-width="3" fill="none"/>
+   <circle cx="32" cy="24" r="10" stroke="#fff" strokeWidth="3" fill="none"/>
    
   
-   <path d="M16 50c4-10 12-14 16-14s12 4 16 14" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+   <path d="M16 50c4-10 12-14 16-14s12 4 16 14" stroke="#fff" strokeWidth="3" fill="none" strokeLinecap="round"/>
    
    
    
-   <path d="M48 43v10M43 48h10" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+   <path d="M48 43v10M43 48h10" stroke="#fff" strokeWidth="3" strokeLinecap="round"/>
  </svg>
  </span>
                        <span>Inbox Delivery</span>
