@@ -98,9 +98,9 @@ const PricingSection = () => {
               key={plan.name}
               className="relative flex flex-col bg-[#0f1629] border border-[#1e293b] rounded-3xl shadow-2xl px-8 py-10 w-full max-w-[380px] mx-auto"
               style={{
-                background: "linear-gradient(135deg, #0f1629 0%, #1e293b 100%)",
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05)",
-              }}
+            boxShadow:
+              "0 0 5px 0 #1c244c, inset 0 -10px 30px #1c244c",
+          }}
             >
               {/* Badge */}
               {plan.badge && (
