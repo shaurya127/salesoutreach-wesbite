@@ -26,6 +26,7 @@ const Navbar = () => {
           ? "bg-[#0a0e23]/30 backdrop-blur-lg "
           : "bg-transparent"
       }`}
+      
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
