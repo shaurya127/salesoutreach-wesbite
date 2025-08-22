@@ -141,7 +141,7 @@ const Navbar = () => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <motion.div
-          className="px-3 sm:px-4 py-4 sm:py-6 bg-black/95 backdrop-blur-lg border-t border-white/10"
+          className="px-3 sm:px-4 py-4 sm:py-6 bg-black/50 backdrop-blur-lg border-t border-white/10"
           variants={{
             open: { y: 0 },
             closed: { y: -20 },

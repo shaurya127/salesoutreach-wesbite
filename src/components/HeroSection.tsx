@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex flex-col bg-gradient-to-b from-[#0a0e23] to-[#0a0e23] text-white overflow-hidden">
+  <section className="relative lg:min-h-screen mb-14 lg:mb-auto flex flex-col bg-gradient-to-b from-[#0a0e23] to-[#0a0e23] text-white overflow-hidden">
     {/* Background Image (bottom inside) */}
     <div className="absolute -bottom-[60%] left-0 right-0 w-full z-0  ">
       <Image
@@ -17,7 +17,7 @@ const HeroSection = () => (
     </div>
 
     {/* Main Content */}
-    <div className="relative z-10 flex flex-col items-center justify-center flex-1 w-full px-3 sm:px-4 md:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-4">
+    <div className="relative z-10 flex flex-col items-center justify-center flex-1 w-full px-3 sm:px-4 md:px-6 lg:px-8 pt-28  md:pt-36 lg:pt-36 pb-4">
       {/* Badge */}
       <motion.div
         className="mb-6 sm:mb-8 px-2"
