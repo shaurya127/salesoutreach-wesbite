@@ -38,12 +38,12 @@ const Footer = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:20px_20px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         {/* Main Content - Company name and tagline */}
-        <div className="flex flex-col lg:flex-row justify-between items-start space-y-8 lg:space-y-0">
+        <div className="flex flex-col lg:flex-row justify-between items-start space-y-6 sm:space-y-8 lg:space-y-0">
           {/* Left Section - Company name and tagline */}
           <motion.div
-            className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-8"
+            className="flex flex-col lg:flex-row items-start lg:items-center space-y-3 sm:space-y-4 lg:space-y-0 lg:space-x-6 lg:space-x-8"
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -51,7 +51,7 @@ const Footer = () => {
           >
             {/* Company Name */}
             <motion.h2
-              className="text-3xl font-bold"
+              className="text-2xl sm:text-3xl font-bold"
               style={{
                 color: "var(--token-7a9e47d0-5397-40af-b396-a04512fe1d9e)",
               }}
@@ -63,11 +63,11 @@ const Footer = () => {
               SalesOutreach
             </motion.h2>
 
-            <div className="border-r-2  border-gray-300 opacity-45  h-7 "></div>
+            <div className="hidden lg:block border-r-2  border-gray-300 opacity-45  h-7 "></div>
 
             {/* Tagline */}
             <motion.p
-              className="text-lg font-medium text-left max-w-md"
+              className="text-sm sm:text-base md:text-lg font-medium text-left max-w-sm sm:max-w-md lg:max-w-md"
               style={{
                 color: "var(--token-7a9e47d0-5397-40af-b396-a04512fe1d9e)",
               }}
@@ -90,7 +90,7 @@ const Footer = () => {
           >
             <Link
               href="/"
-              className="text-lg font-medium transition-colors duration-300 hover:text-white"
+              className="text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 hover:text-white"
               style={{
                 color: "var(--token-ebfdfc6f-a0e8-414d-b30e-eeab99d6e438)",
               }}
@@ -99,10 +99,10 @@ const Footer = () => {
             </Link>
           </motion.div>
         </div>
-   <div className="border-b  border-gray-400 opacity-45 mt-10"></div>
+   <div className="border-b  border-gray-400 opacity-45 mt-8 sm:mt-10"></div>
         {/* Horizontal Separator Line */}
         <motion.div
-          className="w-full h-px my-8"
+          className="w-full h-px my-6 sm:my-8"
           style={{
             backgroundColor:
               "#00000",
@@ -122,7 +122,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p
-            className="text-sm"
+            className="text-xs sm:text-sm"
             style={{
               color: "var(--token-7a9e47d0-5397-40af-b396-a04512fe1d9e)",
             }}

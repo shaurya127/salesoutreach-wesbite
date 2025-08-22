@@ -17,16 +17,16 @@ const HeroSection = () => (
     </div>
 
     {/* Main Content */}
-    <div className="relative z-10 flex flex-col items-center justify-center flex-1 w-full px-4 sm:px-6 lg:px-8 pt-36 pb-4">
+    <div className="relative z-10 flex flex-col items-center justify-center flex-1 w-full px-3 sm:px-4 md:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-4">
       {/* Badge */}
       <motion.div
-        className="mb-8"
+        className="mb-6 sm:mb-8 px-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <span 
-          className="inline-flex items-center px-6 py-3 text-white text-sm font-medium"
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 text-white text-xs sm:text-sm font-medium"
           style={{
             borderBottomWidth: '1px',
             borderColor: '#1c244c',
@@ -37,7 +37,7 @@ const HeroSection = () => (
             alignContent: 'center',
             alignItems: 'center',
             backgroundColor: '#060a1e',
-            borderRadius: '32px',
+            borderRadius: '24px',
             boxShadow: 'inset 0 2px 6px #3a6ef269',
             display: 'flex',
             flex: 'none',
@@ -55,7 +55,7 @@ const HeroSection = () => (
 
       {/* Main Heading */}
       <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-[88px] xl:text-[88px] font-semibold text-center leading-[1.02] mb-8 max-w-6xl"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-[88px] font-semibold text-center leading-[1.1] sm:leading-[1.05] md:leading-[1.02] mb-6 sm:mb-8 max-w-4xl sm:max-w-5xl lg:max-w-6xl px-4"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -70,7 +70,7 @@ const HeroSection = () => (
 
       {/* Description */}
       <motion.p
-        className="textlgg sm:text-md md:text-lg text-gray-500 text-center max-w-2xl mb-12 leading-relaxed px-4"
+        className="text-sm sm:text-base md:text-lg text-gray-500 text-center max-w-lg sm:max-w-xl md:max-w-2xl mb-8 sm:mb-10 md:mb-12 leading-relaxed px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
@@ -87,10 +87,11 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.7 }}
+        className="px-4"
       >
         <a
           href="#book-demo"
-          className="inline-flex items-center px-8 py-3 bg-[#3a6ef2] hover:bg-[#3066f1] text-white text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          className="inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 bg-[#3a6ef2] hover:bg-[#3066f1] text-white text-base sm:text-lg font-semibold rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
           Book Demo
         </a>
@@ -98,20 +99,20 @@ const HeroSection = () => (
 
       {/* Dashboard Preview */}
       <motion.div
-        className="relative w-full flex justify-center mt-16 lg:mt-24"
+        className="relative w-full flex justify-center mt-12 sm:mt-16 md:mt-20 lg:mt-24 px-3 sm:px-4"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.9 }}
       >
        
         {/* Dashboard Image */}
-        <div className="relative z-10 w-full max-w-[68rem] ">
+        <div className="relative z-10 w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[68rem]">
           <Image
             src="/image/dashboard_1.png"
             alt="Dashboard Preview"
             width={1200}
             height={600}
-            className="w-full rounded-2xl lg:rounded-3xl shadow-2xl border border-white/10"
+            className="w-full rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl border border-white/10"
             priority
           />
         </div>

@@ -53,38 +53,38 @@ const plans = [
 const PricingSection = () => {
   const [yearly, setYearly] = useState(false);
   return (
-    <section className="w-full bg-[#0a0e23] py-20 sm:py-32 px-4 sm:px-6" id="pricing">
+    <section className="w-full bg-[#0a0e23] py-16 sm:py-20 md:py-24 lg:py-32 px-3 sm:px-4 md:px-6" id="pricing">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Section Title & Toggle */}
-        <h2 className="text-4xl sm:text-6xl font-extrabold text-center text-white mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-center text-white mb-3 sm:mb-4 px-4">
           Choose A Plan
         </h2>
-        <p className="text-lg text-gray-400 text-center mb-12">
+        <p className="text-sm sm:text-base md:text-lg text-gray-400 text-center mb-8 sm:mb-10 md:mb-12 px-4">
           Flexible Pricing for Teams of All Sizes
         </p>
         
         {/* Perfect Toggle Button matching the image */}
-        <div className="flex items-center justify-center gap-6 mb-16">
+        <div className="flex items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-14 md:mb-16 px-4">
           <span
-            className={`text-lg font-medium transition-colors duration-300 ${
+            className={`text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 ${
               !yearly ? "text-white" : "text-gray-400"
             }`}
           >
             Monthly
           </span>
           <button
-            className={`relative w-16 h-8 rounded-full ${yearly ? "bg-[#3a6ef2]" : "bg-gray-400"}  p-1 transition-all duration-300 ease-in-out `
+            className={`relative w-14 h-7 sm:w-16 sm:h-8 rounded-full ${yearly ? "bg-[#3a6ef2]" : "bg-gray-400"}  p-1 transition-all duration-300 ease-in-out `
 }            onClick={() => setYearly((y) => !y)}
             aria-label="Toggle pricing period"
           >
             <div
-              className={`w-6 h-6 bg-white rounded-full shadow-lg transform transition-transform duration-300 ease-in-out ${
-                yearly ? "translate-x-8" : "translate-x-0"
+              className={`w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full shadow-lg transform transition-transform duration-300 ease-in-out ${
+                yearly ? "translate-x-7 sm:translate-x-8" : "translate-x-0"
               }`}
             />
           </button>
           <span
-            className={`text-lg font-medium transition-colors duration-300 ${
+            className={`text-sm sm:text-base md:text-lg font-medium transition-colors duration-300 ${
               yearly ? "text-white" : "text-gray-400"
             }`}
           >
@@ -92,11 +92,11 @@ const PricingSection = () => {
           </span>
         </div>
         {/* Pricing Cards */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch justify-center max-w-6xl">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 items-stretch justify-center max-w-6xl px-3 sm:px-4">
           {plans.map((plan, idx) => (
             <div
               key={plan.name}
-              className="relative flex flex-col bg-[#0f1629] border border-[#1e293b] rounded-3xl shadow-2xl px-8 py-10 w-full max-w-[380px] mx-auto"
+              className="relative flex flex-col bg-[#0f1629] border border-[#1e293b] rounded-2xl sm:rounded-3xl shadow-2xl px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 w-full max-w-[320px] sm:max-w-[350px] md:max-w-[380px] mx-auto"
               style={{
             boxShadow:
               "0 0 5px 0 #1c244c, inset 0 -10px 30px #1c244c",
@@ -104,25 +104,25 @@ const PricingSection = () => {
             >
               {/* Badge */}
               {plan.badge && (
-                <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+                <span className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-3 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg">
                   {plan.badge}
                 </span>
               )}
               
               {/* Plan Name & Subtitle */}
-              <div className="flex flex-col items-start mb-8 mt-4">
-                <h3 className="text-2xl font-bold text-white mb-2">
+              <div className="flex flex-col items-start mb-6 sm:mb-8 mt-2 sm:mt-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">
                   {plan.name}
                 </h3>
-                <p className="text-sm text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-400">
                   {plan.subtitle}
                 </p>
               </div>
               
               {/* Price */}
-              <div className="flex flex-col items-start mb-8">
+              <div className="flex flex-col items-start mb-6 sm:mb-8">
                 <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-white">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                     {plan.price !== null ? (
                       <>
                         ${yearly ? Math.round(plan.price * 12 * 0.8) : plan.price}
@@ -132,18 +132,18 @@ const PricingSection = () => {
                     )}
                   </span>
                 </div>
-                <span className="text-sm text-gray-400 mt-1">per month</span>
+                <span className="text-xs sm:text-sm text-gray-400 mt-1">per month</span>
               </div>
               
               {/* Features */}
-              <ul className="flex-1 flex flex-col gap-4 mb-8">
+              <ul className="flex-1 flex flex-col gap-3 sm:gap-4 mb-6 sm:mb-8">
                 {plan.features.map((f) => (
                   <li
                     key={f}
-                    className="flex items-center gap-3 text-sm text-gray-300"
+                    className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-300"
                   >
                     <svg 
-                      className="w-5 h-5 text-green-400 flex-shrink-0" 
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" 
                       fill="currentColor" 
                       viewBox="0 0 20 20"
                     >
@@ -161,7 +161,7 @@ const PricingSection = () => {
               {/* CTA Button */}
               <div className="w-full flex items-center justify-center">
 
-              <button className="w-fit  px-4 py-3 rounded-xl bg-[#3a6ef2] text-white text-lg font-semibold shadow-md hover:bg-[#1e60ef] transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <button className="w-fit px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl bg-[#3a6ef2] text-white text-sm sm:text-base md:text-lg font-semibold shadow-md hover:bg-[#1e60ef] transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 {plan.cta}
               </button>
               </div>

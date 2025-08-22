@@ -2,13 +2,13 @@
 import Image from "next/image";
 
 const DashboardPreviewSection = () => (
-  <section className="py-20 relative bg-transparent">
-    <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col items-center">
-      <h2 className="text-3xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent text-center">
+  <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative bg-transparent">
+    <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 flex flex-col items-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent text-center px-4">
         How SalesOutreach Works?
       </h2>
-      <div className="w-full flex flex-col items-center">
-        <div className="relative w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-br from-[#0a0e23] to-[#10172a]">
+      <div className="w-full flex flex-col items-center px-2 sm:px-4">
+        <div className="relative w-full max-w-4xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-br from-[#0a0e23] to-[#10172a]">
           <Image
             src="/image/sales_logo.png"
             alt="Dashboard Preview"
@@ -18,7 +18,7 @@ const DashboardPreviewSection = () => (
             priority
           />
           {/* Optionally, overlay a blue glow at the bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-blue-900/60 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 md:h-24 bg-gradient-to-t from-blue-900/60 to-transparent" />
         </div>
       </div>
     </div>
