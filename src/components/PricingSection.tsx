@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const plans = [
   {
@@ -95,8 +96,8 @@ const PricingSection = () => {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 items-stretch justify-center max-w-6xl px-3 sm:px-4">
           {plans.map((plan, idx) => (
             <div
-              key={plan.name}
-              className="relative flex flex-col bg-[#0f1629] border border-[#1e293b] rounded-2xl sm:rounded-3xl shadow-2xl px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 w-full max-w-[320px] sm:max-w-[350px] md:max-w-[380px] mx-auto"
+              key={idx}
+              className="relative flex flex-col bg-[#0f1629] border border-[#1e293b] rounded-2xl sm:rounded-3xl shadow-2xl px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 w-full max-w-[320px] sm:max-w-[350px] md:max-w-[380px] mx-auto hover:scale-[105%] transition-transform duration-500"
               style={{
             boxShadow:
               "0 0 5px 0 #1c244c, inset 0 -10px 30px #1c244c",
@@ -161,9 +162,9 @@ const PricingSection = () => {
               {/* CTA Button */}
               <div className="w-full flex items-center justify-center">
 
-              <button className="w-fit px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl bg-[#3a6ef2] text-white text-sm sm:text-base md:text-lg font-semibold shadow-md hover:bg-[#1e60ef] transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <Link href="#book-demo" className="w-fit px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl bg-[#3a6ef2] text-white text-sm sm:text-base md:text-lg font-semibold shadow-md hover:bg-[#1e60ef] transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 {plan.cta}
-              </button>
+              </Link>
               </div>
             </div>
           ))}

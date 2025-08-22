@@ -111,10 +111,10 @@ const PipelineSection = () => (
         grunt work of prospecting to outreach so your team can focus on closing
         deals
       </p>
-      <div className="w-full flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-16 items-center justify-center px-2">
+      <div className="w-full flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-16 items-center justify-center px-2 ">
         {/* Left Card */}
         <div
-          className="flex flex-col h-[380px] sm:h-[420px] md:h-[500px] lg:h-[580px] w-full max-w-[320px] sm:max-w-[400px] md:max-w-[480px] bg-[#060a1e] border border-[#1c244c] rounded-2xl sm:rounded-[24px] md:rounded-[32px] shadow-2xl p-4 sm:p-6 md:p-8 lg:p-14 mx-auto mb-6 lg:mb-0 justify-center items-center relative"
+          className="flex flex-col h-[380px] sm:h-[420px] md:h-[500px] lg:h-[580px] w-full max-w-[320px] sm:max-w-[400px] md:max-w-[480px] bg-[#060a1e] border border-[#1c244c] rounded-2xl sm:rounded-[24px] md:rounded-[32px] shadow-2xl p-4 sm:p-6 md:p-8 lg:p-14 mx-auto mb-6 lg:mb-0 justify-center items-center relative hover:scale-[105%] transition-transform duration-500"
           style={{
             boxShadow:
               "0 0 5px 0 #1c244c, inset 0 -10px 30px #1c244c",
@@ -174,7 +174,7 @@ const PipelineSection = () => (
                    {icons}
                  </div>
                  <div className="text-[#9ea3bf] text-xs sm:text-sm mt-1 leading-relaxed">
-                   Prospect smarter. With data that's always right
+                   Prospect smarter. With data that&apos;s always right
                  </div>
                </div>
              </div>
@@ -182,7 +182,7 @@ const PipelineSection = () => (
          </div>
          {/* Right Card */}
          <div
-           className="flex flex-col h-[380px] sm:h-[420px] md:h-[500px] lg:h-[580px] w-full max-w-[320px] sm:max-w-[400px] md:max-w-[480px] bg-[#060a1e] border border-[#1c244c] rounded-2xl sm:rounded-[24px] md:rounded-[32px] shadow-2xl p-4 sm:p-6 md:p-8 lg:p-14 mx-auto justify-center items-center relative"
+           className="flex flex-col h-[380px] sm:h-[420px] md:h-[500px] lg:h-[580px] w-full max-w-[320px] sm:max-w-[400px] md:max-w-[480px] bg-[#060a1e] border border-[#1c244c] rounded-2xl sm:rounded-[24px] md:rounded-[32px] shadow-2xl p-4 sm:p-6 md:p-8 lg:p-14 mx-auto justify-center items-center relative hover:scale-[105%] transition-transform duration-500"
            style={{
              boxShadow:
                "0 0 5px 0 #1c244c, inset 0 -10px 30px #1c244c",

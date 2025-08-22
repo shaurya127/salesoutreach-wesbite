@@ -20,7 +20,7 @@ const faqs = [
     a: "AI-driven emails (3X replies), no more manual prospecting (10+ hours saved), and guaranteed deliverability",
   },
   {
-    q: "What is SalesOutreach's pricing policy?",
+    q: "What is SalesOutreachs pricing policy?",
     a: "We offer a flexible, usage-based pricing structure tailored to your team's needs. Pricing is usage based, with no hidden platform fees—and comprehensive support included with each package. To get a detailed pricing quote, simply reach out and request pricing",
   },
 ];
@@ -35,7 +35,7 @@ const FAQSection = () => {
             Common Questions
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
-            Haven't found what you're looking for?
+            Haven&apos;t found what you&apos;re looking for?
             <br />
             Contact us
           </p>

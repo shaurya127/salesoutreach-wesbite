@@ -1,7 +1,7 @@
 "use client";
 
 const BookDemoSection = () => (
-  <section className="w-full bg-gradient-to-b from-[#0a0e23] to-[#0f1428] py-16 sm:py-20 md:py-24 lg:py-32 px-3 sm:px-4 md:px-6" id="book-demo">
+  <section className="w-full bg-gradient-to-b from-[#0a0e23] to-[#0a0e23] py-16 sm:py-20 md:py-24 lg:py-32 px-3 sm:px-4 md:px-6" id="book-demo">
     <div className="max-w-7xl mx-auto flex flex-col items-center">
       {/* Section Header */}
       <div className="text-center mb-12 sm:mb-14 md:mb-16 px-4">
@@ -30,7 +30,7 @@ const BookDemoSection = () => (
       {/* Additional Info */}
       <div className="text-center mt-8 sm:mt-10 md:mt-12 px-4">
         <p className="text-gray-300 text-sm sm:text-base">
-          Can't find a suitable time?{" "}
+          Can&apos;t find a suitable time?{" "}
           <a
             href="mailto:hello@salesoutreach.io"
             className="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium"

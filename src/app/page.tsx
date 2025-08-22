@@ -5,7 +5,7 @@ import HowItWorksSection from "../components/HowItWorksSection";
 import PricingSection from "../components/PricingSection";
 import BookDemoSection from "../components/BookDemoSection";
 import FAQSection from "../components/FAQSection";
-import DashboardPreviewSection from "../components/DashboardPreviewSection";
+// import DashboardPreviewSection from "../components/DashboardPreviewSection";
 
 export default function Home() {
   return (
