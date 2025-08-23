@@ -6,7 +6,8 @@ const plans = [
   {
     name: "Basic",
     subtitle: "For starters",
-    price: 199,
+    monthPrice: 199,
+    yearPrice: 199,
     features: [
       "3000 Credits",
       "Prospecting Access",
@@ -21,7 +22,8 @@ const plans = [
   {
     name: "Pro",
     subtitle: "For small team",
-    price: 399,
+  monthPrice: 499,
+    yearPrice: 399,
     features: [
       "10,000 Credits",
       "Prospecting Access",
@@ -123,10 +125,10 @@ const PricingSection = () => {
               {/* Price */}
               <div className="flex flex-col items-start mb-6 sm:mb-8">
                 <div className="flex items-baseline">
-                  <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+                  <span className="text-3xl sm:text-4xl md:text-4xl font-medium text-white">
                     {plan.price !== null ? (
                       <>
-                        ${yearly ? Math.round(plan.price * 12 * 0.8) : plan.price}
+                        ${yearly ? Math.round(plan.yearPrice) : plan.monthPrice}
                       </>
                     ) : (
                       "Custom Price"
