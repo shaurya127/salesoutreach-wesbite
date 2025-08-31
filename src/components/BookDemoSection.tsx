@@ -1,6 +1,60 @@
 "use client";
 
-const BookDemoSection = () => (
+import { useEffect } from 'react';
+
+const BookDemoSection = () => {
+  useEffect(() => {
+    // Cal.com inline embed script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.innerHTML = `
+      (function (C, A, L) { 
+        let p = function (a, ar) { a.q.push(ar); }; 
+        let d = C.document; 
+        C.Cal = C.Cal || function () { 
+          let cal = C.Cal; 
+          let ar = arguments; 
+          if (!cal.loaded) { 
+            cal.ns = {}; 
+            cal.q = cal.q || []; 
+            d.head.appendChild(d.createElement("script")).src = A; 
+            cal.loaded = true; 
+          } 
+          if (ar[0] === L) { 
+            const api = function () { p(api, arguments); }; 
+            const namespace = ar[1]; 
+            api.q = api.q || []; 
+            if(typeof namespace === "string"){
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar); 
+            return;
+          } 
+          p(cal, ar); 
+        }; 
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+      
+      Cal("init", "30min", {origin:"https://app.cal.com"});
+      
+      Cal.ns["30min"]("inline", {
+        elementOrSelector:"#my-cal-inline-30min",
+        config: {"layout":"month_view"},
+        calLink: "sales-outreach-10rhw9/30min",
+      });
+      
+      Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    `;
+    
+    document.head.appendChild(script);
+    
+    return () => {
+      // Cleanup script on component unmount
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  return (
   <section className="w-full bg-gradient-to-b from-[#0a0e23] to-[#0a0e23] py-16 sm:py-20 md:py-24 lg:py-32 px-3 sm:px-4 md:px-6" id="book-demo">
     <div className="max-w-7xl mx-auto flex flex-col items-center">
       {/* Section Header */}
@@ -13,16 +67,15 @@ const BookDemoSection = () => (
         </p>
       </div>
 
-      {/* Calendly Integration */}
+      {/* Cal.com Integration */}
       <div className="w-full flex justify-center px-2 sm:px-4">
-        <div className="relative bg-gradient-to-br from-[#10162b] to-[#1a1f3a] border border-[#2d3748] rounded-xl sm:rounded-2xl lg:rounded-[2rem] shadow-2xl overflow-hidden w-full max-w-4xl">
-          <div className="p-3 sm:p-4 md:p-6 lg:p-8">
-           <iframe
-  src="https://calendly.com/ak10012k/30min?hide_gdpr_banner=1&background_color=1a1f3a&text_color=ffffff&primary_color=3a6ef2"
- title="Book a Demo with SalesOutreach"
-  className="w-full min-w-[320px] h-[700px] rounded-2xl border-0 bg-transparent"
-/>
-
+        <div className="relative  overflow-hidden w-full max-w-5xl">
+          <div className="p-3 sm:p-4 md:p-6 lg:p-3">
+            <div 
+              style={{width:'100%', height:'700px', overflow:'scroll'}} 
+              id="my-cal-inline-30min"
+              className="rounded-2xl"
+            ></div>
           </div>
         </div>
       </div>
@@ -41,6 +94,7 @@ const BookDemoSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default BookDemoSection;
